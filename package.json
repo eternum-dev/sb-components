@@ -1,20 +1,45 @@
 {
-  "name": "my-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "at-custom-component",
+  "private": false,
+  "version": "0.0.1-rc4",
   "type": "module",
+  "main": "index.js",
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "vite",
+    "alejandro",
+    "thon",
+    "curso"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/eternum-dev/sb-components",
+  "repository": {
+    "url": "https://github.com/eternum-dev/sb-components",
+    "type": "git"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "release": {
+    "branches": "main"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run clean && tsc && npm run copyfiles",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_7891e1cb04cd1ff"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "chromatic": "npx chromatic --project-token=chpt_7891e1cb04cdnpm 1ff",
+    "clean": "rimraf dist/",
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
+
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.25",
@@ -32,10 +57,14 @@
     "@typescript-eslint/parser": "^7.3.1",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "chromatic": "^11.2.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "eslint-plugin-storybook": "^0.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "storybook": "^8.0.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.2"

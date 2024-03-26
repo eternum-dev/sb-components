@@ -1,7 +1,7 @@
 import './myLabel.css'
 
 
-interface Props {
+export interface LabelProps {
   label: string;
   size?: 'normal' | 'h1' | 'h2' | 'h3',
   allCaps?: boolean,
@@ -13,7 +13,7 @@ interface Props {
   backgroundColor?: string
 }
 
-export const MyLabel = ({ label, size = 'normal', allCaps = false, color = 'text-primary', fontColor = 'text-primary', backgroundColor = 'transparent' }: Props) => {
+export const MyLabel = ({ label, size = 'normal', allCaps = false, color = 'text-primary', fontColor = 'text-primary', backgroundColor = 'transparent' }: LabelProps) => {
 
   return (
     <span
